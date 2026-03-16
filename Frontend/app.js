@@ -4,7 +4,7 @@
 'use strict';
 
 // ─── CONFIG ──────────────────────────────────────────────
-const API = 'http://localhost:8000';
+const API = 'https://healthcare-managementplatforn.onrender.com';
 
 // ─── PAGINATION STATE ────────────────────────────────────
 let state = {

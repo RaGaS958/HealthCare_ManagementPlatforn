@@ -1,0 +1,142 @@
+{
+    "P0001": {
+        "name": "Rahul Das",
+        "city": "Mumbai",
+        "age": 52,
+        "gender": "female",
+        "height": 1.82,
+        "weight": 42.4,
+        "bmi": 12.8,
+        "verdict": "Underweight"
+    },
+    "P0002": {
+        "name": "Sneha Kulkarni",
+        "city": "Bangalore",
+        "age": 32,
+        "gender": "male",
+        "height": 1.6,
+        "weight": 47.9,
+        "bmi": 18.71,
+        "verdict": "Normal"
+    },
+    "P0003": {
+        "name": "Ravi Mehta",
+        "city": "Chennai",
+        "age": 47,
+        "gender": "female",
+        "height": 1.89,
+        "weight": 40.4,
+        "bmi": 11.31,
+        "verdict": "Underweight"
+    },
+    "P0004": {
+        "name": "Ananya Sharma",
+        "city": "Guwahati",
+        "age": 19,
+        "gender": "male",
+        "height": 1.65,
+        "weight": 55.7,
+        "bmi": 20.46,
+        "verdict": "Normal"
+    },
+    "P0005": {
+        "name": "Ravi Mehta",
+        "city": "Hyderabad",
+        "age": 51,
+        "gender": "female",
+        "height": 1.89,
+        "weight": 92.7,
+        "bmi": 25.95,
+        "verdict": "Overweight"
+    },
+    "P0006": {
+        "name": "Karan Singh",
+        "city": "Kolkata",
+        "age": 41,
+        "gender": "female",
+        "height": 1.52,
+        "weight": 86.4,
+        "bmi": 37.4,
+        "verdict": "Obese"
+    },
+    "P0007": {
+        "name": "Arjun Verma",
+        "city": "Mumbai",
+        "age": 63,
+        "gender": "male",
+        "height": 1.67,
+        "weight": 99.4,
+        "bmi": 35.64,
+        "verdict": "Obese"
+    },
+    "P0008": {
+        "name": "Ananya Sharma",
+        "city": "Bangalore",
+        "age": 31,
+        "gender": "female",
+        "height": 1.72,
+        "weight": 40.4,
+        "bmi": 13.66,
+        "verdict": "Underweight"
+    },
+    "P0009": {
+        "name": "Pooja Patel",
+        "city": "Kolkata",
+        "age": 33,
+        "gender": "male",
+        "height": 1.79,
+        "weight": 78.8,
+        "bmi": 24.59,
+        "verdict": "Normal"
+    },
+    "P0010": {
+        "name": "Rahul Das",
+        "city": "Pune",
+        "age": 59,
+        "gender": "female",
+        "height": 1.82,
+        "weight": 43.5,
+        "bmi": 13.13,
+        "verdict": "Underweight"
+    },
+    "P0011": {
+        "name": "Sneha Kulkarni",
+        "city": "Guwahati",
+        "age": 61,
+        "gender": "male",
+        "height": 1.56,
+        "weight": 95.7,
+        "bmi": 39.32,
+        "verdict": "Obese"
+    },
+    "P0012": {
+        "name": "Sneha Kulkarni",
+        "city": "Pune",
+        "age": 58,
+        "gender": "male",
+        "height": 1.87,
+        "weight": 48.8,
+        "bmi": 13.96,
+        "verdict": "Underweight"
+    },
+    "P0013": {
+        "name": "Pushkar khattri",
+        "city": "Lucknow",
+        "age": 23,
+        "gender": "Male",
+        "height": 175.0,
+        "weight": 75.0,
+        "bmi": 24.49,
+        "verdict": "Normal"
+    },
+    "P0014": {
+        "name": "Ravi Kumar",
+        "city": "basti",
+        "age": 24,
+        "gender": "Male",
+        "height": 170.0,
+        "weight": 70.0,
+        "bmi": 24.22,
+        "verdict": "Normal"
+    }
+}

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MediCore — Patient Management</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+
+  <!-- TOAST CONTAINER -->
+  <div id="toast-container" aria-live="polite"></div>
+
+  <!-- ═══════════════════════════════════
+       NAVBAR
+  ════════════════════════════════════ -->
+  <nav id="navbar">
+    <div class="nav-inner">
+
+      <a class="nav-brand" href="#">
+        <div class="nav-brand-icon">🩺</div>
+        <span>MediCore</span>
+      </a>
+
+      <div class="nav-links" id="navLinks">
+        <button class="nav-link active" data-section="hero">Dashboard</button>
+        <button class="nav-link" data-section="patients">Patients</button>
+        <button class="nav-link" data-section="stats-section">Analytics</button>
+      </div>
+
+      <div class="nav-right">
+        <div class="live-badge">
+          <span class="pulse-dot"></span> LIVE
+        </div>
+        <button class="nav-btn" id="navAddBtn">＋ Add Patient</button>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <button class="mobile-nav-link" data-section="hero">🏠 Dashboard</button>
+      <button class="mobile-nav-link" data-section="patients">👥 Patients</button>
+      <button class="mobile-nav-link" data-section="stats-section">📊 Analytics</button>
+      <button class="nav-btn mobile-add-btn" id="mobileAddBtn">＋ Add Patient</button>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════
+       MAIN CONTENT
+  ════════════════════════════════════ -->
+  <main>
+
+    <!-- ─── HERO ─── -->
+    <section class="hero" id="hero">
+      <div class="hero-left">
+        <p class="hero-eyebrow">
+          <span class="pulse-dot small"></span> Healthcare Management Platform
+        </p>
+        <h1 class="hero-title">
+          Patient<br>
+          <span class="gradient-text">Records &</span><br>
+          Analytics
+        </h1>
+        <p class="hero-subtitle">
+          A streamlined clinical dashboard for real-time patient data,
+          vitals monitoring, and intelligent health status insights.
+        </p>
+        <div class="hero-cta">
+          <button class="btn btn-primary" id="heroAddBtn">＋ New Patient</button>
+          <button class="btn btn-ghost" id="heroViewBtn">View Records →</button>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-visual">
+          <div class="deco-ring ring-1"></div>
+          <div class="deco-ring ring-2"></div>
+          <div class="deco-ring ring-3"></div>
+          <div class="deco-center">🏥</div>
+          <div class="deco-orbit orbit-1">💊</div>
+          <div class="deco-orbit orbit-2">🩻</div>
+          <div class="deco-orbit orbit-3">❤️</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── STATS STRIP ─── -->
+    <section class="stats-section" id="stats-section">
+      <div class="stat-card" id="sc-total">
+        <div class="stat-icon accent">👥</div>
+        <div class="stat-body">
+          <div class="stat-val" id="statTotal">—</div>
+          <div class="stat-lbl">Total Patients</div>
+        </div>
+        <div class="stat-bar-track"><div class="stat-bar-fill" id="barTotal" style="width:100%"></div></div>
+      </div>
+      <div class="stat-card" id="sc-normal">
+        <div class="stat-icon success">✅</div>
+        <div class="stat-body">
+          <div class="stat-val success" id="statNormal">—</div>
+          <div class="stat-lbl">Normal BMI</div>
+        </div>
+        <div class="stat-bar-track"><div class="stat-bar-fill success" id="barNormal" style="width:0%"></div></div>
+      </div>
+      <div class="stat-card" id="sc-risk">
+        <div class="stat-icon warning">⚠️</div>
+        <div class="stat-body">
+          <div class="stat-val warning" id="statAtRisk">—</div>
+          <div class="stat-lbl">Overweight</div>
+        </div>
+        <div class="stat-bar-track"><div class="stat-bar-fill warning" id="barRisk" style="width:0%"></div></div>
+      </div>
+      <div class="stat-card" id="sc-obese">
+        <div class="stat-icon danger">🚨</div>
+        <div class="stat-body">
+          <div class="stat-val danger" id="statObese">—</div>
+          <div class="stat-lbl">Obese</div>
+        </div>
+        <div class="stat-bar-track"><div class="stat-bar-fill danger" id="barObese" style="width:0%"></div></div>
+      </div>
+    </section>
+
+    <!-- ─── PATIENTS SECTION ─── -->
+    <section class="patients-section" id="patients">
+
+      <div class="section-header">
+        <div>
+          <div class="section-label">Patient Records</div>
+          <h2 class="section-title">All Patients</h2>
+        </div>
+        <button class="btn btn-primary" id="sectionAddBtn">＋ Add New</button>
+      </div>
+
+      <!-- Controls -->
+      <div class="controls-bar">
+        <div class="search-wrap">
+          <span class="search-icon">🔍</span>
+          <input
+            type="text" id="searchInput" class="search-input"
+            placeholder="Search name, city, ID…" autocomplete="off"
+          >
+          <button class="search-clear" id="searchClear" title="Clear search">×</button>
+        </div>
+        <div class="controls-right">
+          <select class="sort-select" id="sortField">
+            <option value="">Sort by…</option>
+            <option value="bmi">BMI</option>
+            <option value="weight">Weight</option>
+            <option value="height">Height</option>
+          </select>
+          <select class="sort-select" id="sortOrder">
+            <option value="asc">↑ Asc</option>
+            <option value="desc">↓ Desc</option>
+          </select>
+          <button class="btn btn-ghost" id="resetBtn">↺ Reset</button>
+          <button class="btn btn-ghost" id="refreshBtn">↻ Refresh</button>
+        </div>
+      </div>
+
+      <!-- Grid -->
+      <div class="patients-grid" id="patientsGrid">
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+        <div class="skeleton"></div>
+      </div>
+
+      <!-- Pagination -->
+      <div class="pagination-bar" id="paginationBar">
+        <div class="page-info" id="pageInfo">—</div>
+        <div class="page-controls">
+          <button class="page-btn" id="btnFirst"  title="First page">«</button>
+          <button class="page-btn" id="btnPrev"   title="Previous">‹</button>
+          <div class="page-numbers" id="pageNumbers"></div>
+          <button class="page-btn" id="btnNext"   title="Next">›</button>
+          <button class="page-btn" id="btnLast"   title="Last page">»</button>
+        </div>
+        <div class="page-size-wrap">
+          <span class="page-size-lbl">Per page</span>
+          <select class="sort-select" id="pageSizeSelect">
+            <option value="10">10</option>
+            <option value="20" selected>20</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+          </select>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- ═══════════════════════════════════
+       ADD / EDIT MODAL
+  ════════════════════════════════════ -->
+  <div class="modal-overlay" id="formModal" role="dialog" aria-modal="true">
+    <div class="modal">
+      <div class="modal-header">
+        <h2 class="modal-title" id="formModalTitle">Add New Patient</h2>
+        <button class="modal-close" id="formModalClose" aria-label="Close">×</button>
+      </div>
+      <div class="form-grid">
+        <div class="form-group form-full">
+          <label class="form-label" for="fId">Patient ID</label>
+          <input class="form-input" id="fId" placeholder="e.g. P0005" autocomplete="off">
+          <span class="form-hint">Auto-suggested — edit if needed</span>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="fName">Full Name</label>
+          <input class="form-input" id="fName" placeholder="John Doe">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="fCity">City</label>
+          <input class="form-input" id="fCity" placeholder="Mumbai">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="fAge">Age</label>
+          <input class="form-input" id="fAge" type="number" min="1" max="150" placeholder="30">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="fGender">Gender</label>
+          <select class="form-select" id="fGender">
+            <option value="">Select…</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="fHeight">Height (cm)</label>
+          <input class="form-input" id="fHeight" type="number" step="0.1" min="1" placeholder="175.0">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="fWeight">Weight (kg)</label>
+          <input class="form-input" id="fWeight" type="number" step="0.1" min="1" placeholder="70.0">
+        </div>
+      </div>
+      <div class="form-actions">
+        <button class="btn btn-ghost" id="formCancelBtn">Cancel</button>
+        <button class="btn btn-primary" id="formSubmitBtn">💾 Save Patient</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════
+       DETAIL MODAL
+  ════════════════════════════════════ -->
+  <div class="modal-overlay" id="detailModal" role="dialog" aria-modal="true">
+    <div class="modal" id="detailContent"></div>
+  </div>
+
+  <!-- ═══════════════════════════════════
+       DELETE MODAL
+  ════════════════════════════════════ -->
+  <div class="modal-overlay" id="deleteModal" role="dialog" aria-modal="true">
+    <div class="modal modal-sm">
+      <div class="delete-icon-wrap">🗑️</div>
+      <h2 class="delete-title">Delete Patient?</h2>
+      <p class="delete-text">
+        Permanently deleting patient
+        <code class="delete-pid" id="deletePatientId"></code>.
+        This will also reorder all remaining IDs.
+      </p>
+      <div class="delete-actions">
+        <button class="btn btn-ghost" id="deleteCancelBtn">Cancel</button>
+        <button class="btn btn-danger" id="deleteConfirmBtn">🗑️ Delete</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

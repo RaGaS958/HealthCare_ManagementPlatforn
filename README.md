@@ -73,40 +73,31 @@
 
 
 ### ➕ Add / Edit Patient Flow
-<!-- GIF PLACEHOLDER — Replace with screen recording of add/edit modal -->
-```
-╔══════════════════════════════════════════════════════════╗
-║                                                          ║
-║       [ 📽️  INSERT ADD-PATIENT GIF HERE ]                ║
-║                                                          ║
-║   Recommended: Modal open → form fill → save toast      ║
-║   showing auto-calculated BMI + verdict on the card.    ║
-╚══════════════════════════════════════════════════════════╝
-```
+
+
+<div align="center">
+  <img src="Assets/MediCore — Patient Management (1).gif" alt="ADD Patien data Demo" width="600" height="600"/>
+</div>
+
+<br/>
+
+<div align="center">
+  <img src="Assets/MediCore — Patient Management (2).gif" alt="Edit Pateint data Demo" width="600" height="600"/>
+</div>
 
 ### 🔍 Search, Sort & Pagination
-<!-- GIF PLACEHOLDER — Replace with screen recording of search/sort -->
-```
-╔══════════════════════════════════════════════════════════╗
-║                                                          ║
-║       [ 📽️  INSERT SEARCH-SORT GIF HERE ]                ║
-║                                                          ║
-║   Recommended: Typing in search bar → live filter,      ║
-║   then BMI sort toggle, then pagination navigation.     ║
-╚══════════════════════════════════════════════════════════╝
-```
+
+<div align="center">
+  <img src="Assets/MediCore — Patient Management (3).gif" alt="Search, Sort & Pagination Demo" width="600" height="600"/>
+</div>
+
 
 ### 🗑️ Delete & ID Reorder
-<!-- GIF PLACEHOLDER — Replace with delete confirmation + reorder -->
-```
-╔══════════════════════════════════════════════════════════╗
-║                                                          ║
-║       [ 📽️  INSERT DELETE GIF HERE ]                     ║
-║                                                          ║
-║   Recommended: Click delete → confirm modal →           ║
-║   card vanishes → IDs reordered seamlessly.             ║
-╚══════════════════════════════════════════════════════════╝
-```
+
+
+<div align="center">
+  <img src="Assets/MediCore — Patient Management (4).gif" alt="Delete & ID Reorder Demo" width="600" height="600"/>
+</div>
 
 </div>
 
@@ -862,45 +853,6 @@ HealthCare_ManagementPlatforn/
 | GSAP | 3.12.2 | Scroll + entrance animations |
 | ScrollTrigger | 3.12.2 | Scroll-based animation triggers |
 | Google Fonts | — | Syne, DM Mono, Instrument Sans |
-
----
-
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-## 🗺️ Roadmap
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-
-```mermaid
-timeline
-    title MediCore Roadmap
-    section v1.0 — Current
-        Core CRUD     : Add / Read / Update / Delete
-        BMI Engine    : Auto-computed verdict
-        Pagination    : Search + Sort + Limit
-        Docker        : Published to Hub
-        Deploy        : Vercel + Render
-
-    section v1.1 — Next
-        Auth          : JWT-based login
-        PostgreSQL    : Replace JSON with real DB
-        Charts        : Chart.js BMI trend graphs
-        Export        : CSV / PDF patient export
-
-    section v2.0 — Future
-        Multi-tenant  : Hospital-level isolation
-        AI Insights   : Risk prediction model
-        Mobile App    : React Native companion
-        Audit Log     : Change history per patient
-```
-
----
-
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-## 📜 License
-<!-- ═══════════════════════════════════════════════════════════════════════ -->
-
-<div align="center">
-
-This project is licensed under the **MIT License** — free to use, modify, and distribute.
 
 ---
 

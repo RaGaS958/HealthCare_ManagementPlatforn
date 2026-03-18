@@ -65,18 +65,12 @@
 <div align="center">
 
 ### 🖥️ Dashboard & Patient Grid
-<!-- GIF PLACEHOLDER — Replace with screen recording of dashboard -->
-```
-╔══════════════════════════════════════════════════════════╗
-║                                                          ║
-║       [ 📽️  INSERT DASHBOARD GIF HERE ]                  ║
-║                                                          ║
-║   Recommended: Screen capture of the hero section,      ║
-║   stat cards animating in, and patient grid loading.    ║
-║   Tool: Loom / ShareX / Kap (macOS)                     ║
-║   Size: 800×450px, < 5MB                                ║
-╚══════════════════════════════════════════════════════════╝
-```
+
+
+<div align="center">
+  <img src="Assets/MediCore — Patient Management.gif" alt="Dashboard Demo" width="600" height="600"/>
+</div>
+
 
 ### ➕ Add / Edit Patient Flow
 <!-- GIF PLACEHOLDER — Replace with screen recording of add/edit modal -->
